@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+    <style>
+        input[type=checkbox]:checked + label.strikethrough{
+        text-decoration: line-through;
+        }
+        .top{
+            margin-top: 10px;
+        }
+        li{
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <p>Today is <strong><%= currentDate %></strong> </p>
+    <% itemList.forEach((item)=> { %>
+        <p>
+            <input type="checkbox" name="packersOff" id="packers" value="1"/>
+            <label for="packers" class="strikethrough"><%= item %></label>
+        </p>
+    <% }) %>
+    <form action="/" method="post">
+        <input class="top" type="text" name="newItem" id="" placeholder="Enter the new item" autofocus>
+        <button type="submit" name="item" value=<%= listType %>>Add</button>
+    </form>
+</body>
+</html>
